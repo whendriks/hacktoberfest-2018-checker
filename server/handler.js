@@ -12,7 +12,7 @@ module.exports.index = async (event, context, callback) => {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
       },
-      body: JSON.stringify(await githubService.fetchPullRequests(username))
+      body: JSON.stringify(await githubService.fetchPullRequestsOfUser(username))
     });
   } catch (e) {
     return callback(null, {
