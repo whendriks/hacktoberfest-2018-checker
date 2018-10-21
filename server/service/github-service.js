@@ -1,4 +1,5 @@
 const request = require('request');
+const i18n = require("../locales");
 
 const fetchPullRequestsOfUser = (username) => {
   return new Promise((resolve, reject) => {
@@ -80,14 +81,14 @@ const createNoValidPullRequestsResponse = (jsonBody) => {
 }
 
 const createMessageByPullrequestQuantity = (quantity) => {
-  if(!quantity) {
-    return "You haven't created any Pull Requests so far. Start contributing to the Open Source Community and Win a T-Shirt at 5 PRs"
+  if (!quantity) {
+    return i18n.t("no_pull_requests");
   } else if (quantity >= 1 && quantity <= 3) {
-    return "Great job. The Open Source community is already thankful to you, but you can achieve more. Keep it up!"
+    return i18n.t("keep_it_up");
   } else if (quantity === 4) {
-    return "You are almost there! One more to go and you will be able to wear one of the coolest T-Shirts out there"
+    return i18n.t("almost_there");
   } else {
-    return "You did it! Congratulations! Time to rest and wait for your well deserved T-Shirt!"
+    return i18n.t("congratulations");
   }
 }
 
