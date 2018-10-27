@@ -1,7 +1,8 @@
 const mockRequest = require('request');
-const { fetchPullRequestsOfUser, createMessageByPullrequestQuantity } = require('../service/github-service');
+const { fetchPullRequestsOfUser } = require('../service/progress-checker-service');
+const { createMessageByPullrequestQuantity } = require('../service/response-creator');
 
-describe('Github service - fetchPullRequests', () => {
+describe('Progress checker service - fetchPullRequests', () => {
   it('should reject the request if status code >= 400', async () => {
     mockRequest.get.mockImplementationOnce(({}, cb) => {
       const data = { statusCode: 401 };
