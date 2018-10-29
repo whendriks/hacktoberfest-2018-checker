@@ -1,6 +1,6 @@
 const mockRequest = require('request');
-const { fetchPullRequestsOfUser } = require('../service/progress-checker-service');
-const { createMessageByPullrequestQuantity } = require('../service/response-creator');
+const { fetchPullRequestsOfUser } = require('../app/services/progress-checker-service');
+const { createMessageByPullrequestQuantity } = require('../app/factories/response-creator');
 
 describe('Progress checker service - fetchPullRequests', () => {
   it('should reject the request if status code >= 400', async () => {

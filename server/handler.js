@@ -1,7 +1,7 @@
 "use strict";
 
 const i18n = require("./locales");
-const progressCheckerService = require("./service/progress-checker-service");
+const progressCheckerService = require("./app/services/progress-checker-service");
 
 module.exports.index = async (event, context, callback) => {
   try {
