@@ -20,7 +20,7 @@ const fetchPullRequestsOfUser = (username) => {
         return reject(response);
       } else {
         const pullRequestProgress = pullRequestsValidator.getProgressFromBody(body);
-        const response = responseCreator.buildProgressResponse(pullRequestProgress);
+        const response = responseCreator.createProgressResponse(pullRequestProgress);
 
         return resolve(response);
       }

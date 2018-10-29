@@ -11,7 +11,7 @@ const createErrorResponse = (statusCode, body) => {
   };
 }
 
-const buildProgressResponse = (pullRequestProgress) => {
+const createProgressResponse = (pullRequestProgress) => {
   if (pullRequestProgress.amountOfValidPullRequests) {
     let message = createResponseMessageByPullrequestQuantity(pullRequestProgress.amountOfValidPullRequests);
     return new ValidPullRequestsResponse(pullRequestProgress, message);
@@ -36,5 +36,5 @@ const createResponseMessageByPullrequestQuantity = (quantity) => {
 }
 
 module.exports = {
-  createErrorResponse, buildProgressResponse, createResponseMessageByPullrequestQuantity
+  createErrorResponse, createProgressResponse, createResponseMessageByPullrequestQuantity
 }
