@@ -1,7 +1,8 @@
 "use strict";
-const i18n = require("./locales");
 
-const githubService = require("./service/github-service");
+const i18n = require("./locales");
+const progressCheckerService = require("./app/progress-checker-service");
+
 module.exports.index = async (event, context, callback) => {
   try {
     const { lng, username } = event.queryStringParameters;
@@ -12,7 +13,7 @@ module.exports.index = async (event, context, callback) => {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
       },
-      body: JSON.stringify(await githubService.fetchPullRequestsOfUser(username))
+      body: JSON.stringify(await progressCheckerService.fetchPullRequestsOfUser(username))
     });
   } catch (e) {
     return callback(null, {
